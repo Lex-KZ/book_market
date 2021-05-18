@@ -71,7 +71,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # For Devise
+  # For Devise, default URL for email
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Uncomment if you wish to allow Action Cable access from any origin.
