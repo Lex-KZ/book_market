@@ -1,0 +1,10 @@
+<h1>Account Summary</h1>
+<% if current_user %>
+    <%= "Name: #{current_user.firstname} #{current_user.lastname}" %><br/>
+
+    <%= "Username: #{current_user.username}"  %><br/>
+
+    <%= "Email: #{current_user.email}" %><br/>
+
+    <%= "Address: #{current_user.address} " %><br/>
+<% end %>
