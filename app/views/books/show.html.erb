@@ -7,6 +7,31 @@
   <strong>Author:</strong>
   <%= @book.author_full_name %>
 </p>
+
+<p>
+  <strong>Publication Year:</strong>
+  <%= @book.pub_year %>
+</p>
+
+<%= if @book.editio %>
+    <p>
+    <strong>Publication Year:</strong>
+    <%= @book.pub_year %>
+    </p>
+<%=end%>
+
+
+<p>
+  <strong>Blurb:</strong>
+  <%= @book.blurb %>
+</p>
+
+<p>
+  <strong>Physical Description:</strong>
+  <%= @book.physical_description %>
+</p>
+
+
 <%
 =begin%>
  
