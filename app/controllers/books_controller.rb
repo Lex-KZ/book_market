@@ -3,21 +3,19 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, only: [:restricted]
   before_action :set_book, only: %i[ show edit update destroy ]
   
-  
- 
 
   def restricted
   end
 
   def home
-    @books = books.all
+    @books = Book.all
     # if current_user
     #   @books = current_user.books
     # end
   end
 
   def new
-    @book = book.new
+    @book = Book.new
   end
   
   def create
