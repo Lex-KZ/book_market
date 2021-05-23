@@ -1,19 +1,20 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
     before_action :authenticate_user!
     before_action :set_user, only: %i[ show edit update destroy ]
 
     # GET
     def index
+      @user = current_user
     end
 
     # GET
     def show
-        @user = current_user
+      @user = current_user
     end
 
     # GET
     def new
-        @user = User.new
+      @user = User.new
     end
 
     # GET

@@ -7,6 +7,7 @@ class BooksController < ApplicationController
   def restricted
   end
 
+  # GET
   def index
     @books = Book.all
     # if current_user
@@ -14,10 +15,12 @@ class BooksController < ApplicationController
     # end
   end
 
+  # GET
   def new
     @book = Book.new
   end
   
+  # PUT
   def create
     @book = current_user.books.build(book_params)
 
@@ -33,13 +36,15 @@ class BooksController < ApplicationController
     # redirect_to books_path
   end
 
+  # GET
   def edit
   end
 
+  # GET
   def show
-    
   end
 
+  # PUT/PATCH
   def update
     @book = Book.find(params[:id])
     respond_to do |format|
@@ -53,6 +58,7 @@ class BooksController < ApplicationController
     end
   end
 
+  # DELETE
   def destroy
     @book = current_user.books.all.find(params[:id])
     @book.destroy
@@ -62,6 +68,7 @@ class BooksController < ApplicationController
     end
   end
 
+  
   private
     def set_book
       @book = Book.find(params[:id])
