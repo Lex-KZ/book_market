@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   def restricted
   end
 
-  def home
+  def index
     @books = Book.all
     # if current_user
     #   @books = current_user.books
@@ -37,11 +37,11 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = books.all.find(params[:id])
+    
   end
 
   def update
-    @book = current_user.books.all.find(params[:id])
+    @book = Book.find(params[:id])
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: "Book was successfully updated." }
@@ -64,11 +64,11 @@ class BooksController < ApplicationController
 
   private
     def set_book
-      @book = books.all.find(params[:id])
+      @book = Book.find(params[:id])
     end
 
     def book_params
-      params.require(:book).permit(:title, :author_first_name, :author_last_name, :pub_year, :edition, :blurb, :physical_description)
+      params.require(:book).permit(:user_id, :title, :author_first_name, :author_last_name, :pub_year, :edition, :blurb, :physical_description)
     end
 
   

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'books#home'
+  root to: 'books#index'
   get 'books', to: 'books#index', as: 'books'
   post 'books', to: 'books#create'
   get 'books/new', to: 'books#new', as: 'new_book'
