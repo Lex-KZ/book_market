@@ -1,0 +1,31 @@
+<%= form_with model: book do |form| %>
+    <%=form.label :title %>
+    <%=form.text_field :title%>
+    <br>
+    <br>
+    <%=form.label :author_first_name %>
+    <%=form.text_field :author_first_name%>
+    <br>
+    <br>
+    <%=form.label :author_last_name %>
+    <%=form.text_field :author_last_name%>
+    <br>
+    <br>
+    <%=form.label :pub_year %>
+    <%=form.number_field :pub_year%>
+    <br>
+    <br>
+    <%=form.label :edition %>
+    <%=form.text_field :edition%>
+    <br>
+    <br>
+    <%=form.label :blurb %>
+    <%=form.text_field :blurb%>
+    <br>
+    <br>
+    <%=form.label :physical_description %>
+    <%=form.text_field :physical_description%>
+    <br>
+    <br>
+    <%=form.submit%>
+<%end%>

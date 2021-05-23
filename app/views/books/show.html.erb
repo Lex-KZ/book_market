@@ -1,0 +1,43 @@
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author_full_name %>
+</p>
+
+<p>
+  <strong>Publication Year:</strong>
+  <%= @book.pub_year %>
+</p>
+
+<%
+=begin%>
+ <%= if @book.edit %>
+    <p>
+    <strong>Publication Year:</strong>
+    <%= @book.pub_year %>
+    </p>
+<%=end%> 
+<%
+=end%>
+
+
+<p>
+  <strong>Blurb:</strong>
+  <%= @book.blurb %>
+</p>
+
+<p>
+  <strong>Physical Description:</strong>
+  <%= @book.physical_description %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
+
