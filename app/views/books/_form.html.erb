@@ -27,5 +27,7 @@
     <%=form.text_field :physical_description%>
     <br>
     <br>
+    <%=form.label :cost %>
+    <%=form.number_field(:cost, step: 0.01) %>
     <%=form.submit%>
 <%end%>

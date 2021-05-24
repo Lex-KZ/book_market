@@ -5,6 +5,7 @@ class Book < ApplicationRecord
     validates :pub_year, presence: true, numericality: { only_integer: true }
     validates :blurb, presence: true
     validates :physical_description, presence: true
+    validates :cost, presence: true
 
     belongs_to :user
 
