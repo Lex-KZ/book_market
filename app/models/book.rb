@@ -9,6 +9,8 @@ class Book < ApplicationRecord
 
     belongs_to :user
 
+    has_one_attached :picture
+
     def author_full_name
         [ self.author_first_name, self.author_last_name ].join(' ')
     end
