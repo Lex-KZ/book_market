@@ -1,3 +1,24 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.hero-image {
+    display: flex;
+    background-image: url(hero-image.jpg);
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        font-size: 5rem;
+        color: antiquewhite;
+    }
+}
+
+.background-box{
+    background-color: #5e3c31;
+    opacity: 60%;
+    margin: 10px;
+    width: 100%;
+    height: 100vh;
+}
