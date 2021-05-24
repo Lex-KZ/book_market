@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_234022) do
     t.bigint "seller_id", null: false
     t.bigint "buyer_id", null: false
     t.bigint "book_id", null: false
+    t.integer "amount", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_transactions_on_book_id"
@@ -55,4 +56,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_234022) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "transactions", "books"
+  add_foreign_key "transactions", "users", column: "buyer_id"
+  add_foreign_key "transactions", "users", column: "seller_id"
 end
