@@ -5,7 +5,7 @@
       <div class="card-deck"> 
         <% @books.each do |book| %> 
       
-          <div class="card mb-4" style="min-width: 18rem;">
+          <div class="card" style="min-width: 18rem;">
             <div class="card-body">
               <%= image_tag book.picture, class: "card-img-top" if book.picture.attached? %>
               <h5 class="card-title"><%=book.title%></h5>
