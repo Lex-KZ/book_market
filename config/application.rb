@@ -34,5 +34,10 @@ module BookMarket
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Resolving deployment issues:
+    # Resolving "Precompiling assets failed":
+    config.assets.initialize_on_precompile = false
+
   end
 end
