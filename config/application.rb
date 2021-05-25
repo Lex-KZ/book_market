@@ -24,6 +24,9 @@ module BookMarket
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    # Static images form deployment
+    config.serve_static_assets = true
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -34,5 +37,10 @@ module BookMarket
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Resolving deployment issues:
+    # Resolving "Precompiling assets failed":
+    config.assets.initialize_on_precompile = false
+
   end
 end

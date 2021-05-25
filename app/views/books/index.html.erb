@@ -5,9 +5,13 @@
       <div class="card-deck"> 
         <% @books.each do |book| %> 
       
-          <div class="card" style="min-width: 18rem;">
+<<<<<<< HEAD
+          
+=======
+          <div class="card" style="width: 18rem;">
+          <%= image_tag book.picture, alt: "Image of book", class: "card-img-top" if book.picture.attached? %>
+>>>>>>> main
             <div class="card-body">
-              <%= image_tag book.picture, class: "card-img-top" if book.picture.attached? %>
               <h5 class="card-title"><%=book.title%></h5>
               <h6 class="card-subtitle mb-2 text-muted"><%=book.author_full_name%></h6>
               <p class="card-text mt-2"><%=book.blurb %></p>
