@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-  before_action :authenticate_user!, only: [:restricted]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_book, only: %i[ show edit update destroy ]
   
 
@@ -22,7 +22,7 @@ class BooksController < ApplicationController
   
   # PUT
   def create
-    @book = current_user.books.build(book_params)
+    @book = current_user.books.new(book_params)
 
     respond_to do |format|
       if @book.save
@@ -76,7 +76,9 @@ class BooksController < ApplicationController
 
     def book_params
       params.require(:book).permit(
-        :user_id, :title, :author_first_name, :author_last_name, :pub_year, :edition, :blurb, :physical_description, :cost
+        :user_id, :title, :author_first_name, :author_last_name,
+        :pub_year, :edition, :blurb, :physical_description, :cost,
+        :picture
       )
     end
 
