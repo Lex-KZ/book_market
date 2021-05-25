@@ -7,10 +7,12 @@
       
           <div class="card mb-4" style="min-width: 18rem;">
             <div class="card-body">
+              <%= image_tag book.picture, class: "card-img-top" if book.picture.attached? %>
               <h5 class="card-title"><%=book.title%></h5>
               <h6 class="card-subtitle mb-2 text-muted"><%=book.author_full_name%></h6>
               <p class="card-text mt-2"><%=book.blurb %></p>
               <p class="card-text"><small class="text-muted"> $<%=book.cost%></small></p>
+              <%=link_to 'View', book_path(book), class: "btn btn-primary"%>
               <%=link_to 'Edit', edit_book_path(book), class: "btn btn-warning"%>
               <%=link_to 'Delete', book_path(book), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
             </div>

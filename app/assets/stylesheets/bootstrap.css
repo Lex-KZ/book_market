@@ -6288,6 +6288,7 @@ textarea.form-control-lg {
 }
 
 .float-end {
+  display: flex;
   float: right !important;
 }
 

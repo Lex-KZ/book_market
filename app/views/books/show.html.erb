@@ -1,46 +1,38 @@
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+  <div >
+    <%= image_tag @book.picture, class: "rounded float-end" if @book.picture.attached? %>
+  </div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author_full_name %>
-</p>
+<div class="show-text">
+  <p>
+    <strong>Title:</strong>
+    <%= @book.title %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= "$#{@book.cost}" %>
-</p>
+  <p>
+    <strong>Author:</strong>
+    <%= @book.author_full_name %>
+  </p>
 
-<p>
-  <strong>Publication Year:</strong>
-  <%= @book.pub_year %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= "$#{@book.cost}" %>
+  </p>
 
-<%
-=begin%>
- <%= if @book.edit %>
-    <p>
+  <p>
     <strong>Publication Year:</strong>
     <%= @book.pub_year %>
-    </p>
-<%=end%> 
-<%
-=end%>
+  </p>
 
+  <p>
+    <strong>Blurb:</strong>
+    <%= @book.blurb %>
+  </p>
 
-<p>
-  <strong>Blurb:</strong>
-  <%= @book.blurb %>
-</p>
-
-<p>
-  <strong>Physical Description:</strong>
-  <%= @book.physical_description %>
-</p>
-
-
+  <p>
+    <strong>Physical Description:</strong>
+    <%= @book.physical_description %>
+  </p>
+</div>
 
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
