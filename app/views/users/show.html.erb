@@ -1,10 +1,10 @@
 <h1>Account Summary</h1>
 <% if current_user %>
-    <%= "Name: #{current_user.first_name} #{current_user.last_name}" %><br/>
+    <%= "Name: #{ sanitize current_user.first_name} #{sanitize current_user.last_name}" %><br/>
 
-    <%= "Username: #{current_user.user_name}"  %><br/>
+    <%= "Username: #{sanitize current_user.user_name}"  %><br/>
 
-    <%= "Email: #{current_user.email}" %><br/>
+    <%= "Email: #{sanitize current_user.email}" %><br/>
 <% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

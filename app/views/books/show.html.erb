@@ -5,17 +5,17 @@
 <div class="show-text">
   <p>
     <strong>Title:</strong>
-    <%= @book.title %>
+    <%= sanitize @book.title.html_safe %>
   </p>
 
   <p>
     <strong>Author:</strong>
-    <%= @book.author_full_name %>
+    <%= sanitize @book.author_full_name.html_safe %>
   </p>
 
   <p>
     <strong>Price:</strong>
-    <%= "$#{@book.cost}" %>
+    <%= "$#{ @book.cost}" %>
   </p>
 
   <p>
@@ -25,22 +25,22 @@
 
   <p>
     <strong>Blurb:</strong>
-    <%= @book.blurb %>
+    <%= sanitize @book.blurb.html_safe %>
   </p>
 
   <p>
     <strong>Physical Description:</strong>
-    <%= @book.physical_description %>
+    <%= sanitize @book.physical_description.html_safe%>
   </p>
 </div>
 
 
-<button type="button" id="checkout-button">Checkout</button>
-
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
-
+<% if current_user.id==@book.user_id%>
+  <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-warning"%> |
+  <%= link_to 'Back', books_path, class: "btn btn-primary" %>
+<%else%>
+  <button type="button" id="checkout-button" class="btn btn-danger">Checkout</button>
+<%end%>
 
 <script type="text/javascript">
   // Create an instance of the Stripe object with your publishable API key

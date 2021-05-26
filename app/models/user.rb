@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :timeoutable
 
+  validates :user_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+     
+
   has_many :books
 
   has_many :sales, class_name: "Transaction", foreign_key: :seller_id

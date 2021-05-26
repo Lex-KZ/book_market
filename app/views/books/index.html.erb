@@ -8,21 +8,17 @@
           <div class="card" style="width: 18rem;">
           <%= image_tag book.picture, alt: "Image of book", class: "card-img-top" if book.picture.attached? %>
             <div class="card-body">
-              <h5 class="card-title"><%=book.title%></h5>
-              <h6 class="card-subtitle mb-2 text-muted"><%=book.author_full_name%></h6>
-              <p class="card-text mt-2"><%=book.blurb %></p>
+              <h5 class="card-title"><%=sanitize book.title.html_safe%></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%=sanitize book.author_full_name.html_safe%></h6>
+              <p class="card-text mt-2"><%=sanitize book.blurb.html_safe%></p>
               <p class="card-text"><small class="text-muted"> $<%=book.cost%></small></p>
               <%=link_to 'View', book_path(book), class: "btn btn-primary"%>
-              <%=link_to 'Edit', edit_book_path(book), class: "btn btn-warning"%>
-              <%=link_to 'Delete', book_path(book), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
             </div>
           </div> 
   
         <%end%> 
     </div> 
   </div>
-    
-    <%= link_to "New Book", new_book_path %>
 
   </div>
 </section>
