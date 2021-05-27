@@ -2,17 +2,10 @@ class BooksController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_book, only: %i[ show edit update destroy ]
-  
-
-  def restricted
-  end
 
   # GET
   def index
     @books = Book.all
-    # if current_user
-    #   @books = current_user.books
-    # end
   end
 
   # GET
